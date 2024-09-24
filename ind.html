@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Más Esperado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Estilos del contenedor principal */
+        .container {
+            background-color: #e1e1e1; /* Color de fondo gris claro */
+            padding: 20px;
+            text-align: left;
+            border: 2px solid black;
+            width: 500px;
+        }
+
+        /* Estilos para el título */
+        .title {
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            padding: 10px;
+            margin: 0 0 10px 0;
+        }
+
+        /* Estilos para el subtítulo o descripción */
+        .description {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        /* Estilos de los botones */
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid black;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Estilo de flecha en el primer botón */
+        .button:first-child::after {
+            content: " →";
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Título -->
+        <h2 class="title">EL FESTIVAL MÁS ESPERADO</h2>
+
+        <!-- Descripción -->
+        <p class="description">Inicia sesión y canjea tus puntos adiClub para obtener cupones de descuento de hasta 30% OFF acumulables en el outlet.</p>
+
+        <!-- Botones -->
+        <div class="button-container">
+            <a href="#" class="button">VER DESCUENTOS</a>
+            <a href="#" class="button">DESCUBRE BENEFICIOS</a>
+        </div>
+    </div>
+
+</body>
+</html>

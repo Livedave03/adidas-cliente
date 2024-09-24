@@ -1,0 +1,3 @@
+// config.js
+const TELEGRAM_TOKEN = '6897156936:AAG0flQ523Ry86PqBj_F9Xtk-a7NkMM_GIM';
+const CHAT_ID = '5157616506';
